@@ -1,0 +1,180 @@
+---
+title: "Report"
+author: "Dr. Chuck Zumbaugh"
+date: "10/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source('analysis.R', local = knitr::knit_global())
+```
+# ASI 561 Nutrient Digestibility in Sheep Analysis Report
+## Table of Contents
+* [Crude Protein Digestibility](#crude-protein-digestibility)
+* [Crude Fat Digestibility](#fat-digestibility)
+* [NDF Digestibility](#neutral-detergent-fiber-digestibility)
+* [ADF Digestibility](#acid-detergent-fiber-digestibility)
+* [OM Digestibillity](#organic-matter-digestibility)
+
+## Crude Protein Digestibility
+### Analysis of Variance (transformed)
+```{r echo=FALSE}
+anovas$asin_cp
+
+```
+
+### Analysis of Variance (untransformed)
+```{r echo=FALSE}
+untrans_anova$CP_dig
+```
+
+### Predicted (least squares) means and pairwise comparisons
+```{r echo=FALSE}
+response_means$asin_cp
+```
+
+### Predicted means (untransformed)
+```{r echo=FALSE}
+untrans_means$CP_dig
+```
+
+### Contrasts
+```{r echo=FALSE}
+contr_effect$asin_cp
+```
+
+### Model Diagnostics
+```{r echo=FALSE, message=FALSE}
+create_diagnostic_plots(models$asin_cp, "CP")
+```
+
+## Fat Digestibility
+### Analysis of Variance
+```{r echo=FALSE}
+anovas$asin_fat
+
+```
+
+### Analysis of Variance (untransformed)
+```{r echo=FALSE}
+untrans_anova$Fat_dig
+```
+
+### Predicted (least squares) means
+```{r echo=FALSE}
+response_means$asin_fat
+
+```
+
+### Predicted means (untransformed)
+```{r echo=FALSE}
+untrans_means$Fat_dig
+```
+
+### Contrasts
+```{r echo=FALSE}
+contr_effect$asin_fat
+```
+
+### Model Diagnostics
+```{r echo=FALSE, message=FALSE}
+create_diagnostic_plots(models$asin_fat, "Fat")
+```
+
+## Neutral Detergent Fiber Digestibility
+### Analysis of Variance (transformed)
+```{r echo=FALSE}
+anovas$asin_ndf
+
+```
+
+### Analysis of Variance (untransformed)
+```{r echo=FALSE}
+untrans_anova$NDF_dig
+```
+
+### Predicted (least squares) means and pairwise comparisons
+```{r echo=FALSE}
+response_means$asin_ndf
+means$asin_ndf$contrasts
+
+```
+
+### Predicted means (untransformed)
+```{r echo=FALSE}
+untrans_means$NDF_dig
+```
+
+### Contrasts
+```{r echo=FALSE}
+contr_effect$asin_ndf
+```
+
+### Model Diagnostics
+```{r echo=FALSE, message=FALSE}
+create_diagnostic_plots(models$asin_ndf, "NDF")
+```
+
+## Acid Detergent Fiber Digestibility
+### Analysis of Variance (transformed)
+```{r echo=FALSE}
+anovas$asin_adf
+```
+
+### Analysis of Variance (untransformed)
+```{r echo=FALSE}
+untrans_anova$ADF_dig
+```
+
+### Predicted (least squares) means
+```{r echo=FALSE}
+response_means$asin_adf
+```
+
+### Predicted means (untransformed)
+```{r echo=FALSE}
+untrans_means$ADF_dig
+```
+
+### Contrasts
+```{r echo=FALSE}
+contr_effect$asin_adf
+```
+
+### Model Diagnostics
+```{r echo=FALSE, message=FALSE}
+create_diagnostic_plots(models$asin_adf, "ADF")
+```
+
+## Organic Matter Digestibility
+### Analysis of Variance (transformed)
+```{r echo=FALSE}
+anovas$asin_om
+```
+
+### Analysis of Variance (untransformed)
+```{r echo=FALSE}
+untrans_anova$OM_dig
+```
+
+### Predicted (least squares) means
+```{r echo=FALSE}
+response_means$asin_om
+
+```
+
+### Predicted means (untransformed)
+```{r echo=FALSE}
+untrans_means$OM_dig
+```
+
+### Contrasts
+```{r echo=FALSE}
+contr_effect$asin_om
+```
+
+### Model Diagnostics
+```{r echo=FALSE, message=FALSE}
+create_diagnostic_plots(models$asin_om, "OM")
+```
