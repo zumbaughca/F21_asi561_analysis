@@ -7,7 +7,7 @@ cp_df <- data.frame("trt" = c("A", "B", "C", "D"),
 cp_df <- data.frame(untrans_means$CP_dig) %>%
   mutate(Treatment = c("0", "10", "20", "30"))
 
-my_theme <- function() {
+empty_theme <- function() {
   th <- theme(
     panel.background = element_blank(),
     axis.line = element_line(size = 1),
@@ -36,5 +36,5 @@ ggplot(data = cp_df,
   ylab("Digestibility, %") +
   xlab("Sorghum Inclusion, % DM") +
   labs(title = "CP digestibility") +
-  my_theme()
+  empty_theme()
   
